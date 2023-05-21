@@ -39,6 +39,7 @@ function inject(event) {
         }
       }
     })
+    .catch(console.error)
   }
   return false
 }
