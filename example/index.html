@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer crossorigin="anonymous" src="/vscript.js"></script>
+    <link rel="icon" href="data:;base64," type="image/x-icon" />
+    <style>
+      button { font-size: inherit; }
+    </style>
+  <head>
+  <body style="font-size: 20px;">
+    <section style="padding: 10px;" id="example">
+      <h1 v-data="{ source: 'VSCRIPT', emotion: '❤️' }" v-text="`From ${source} With ${emotion}`"></h1>
+      <button @click.inject="/partial.html" v-target="example">mount server side HTML</button>
+    </section>
+    <a style="display: block; padding: 10px;" @boost href="/page.html">client side routing of server side HTML aka magic</a>
+    <section v-data="{ data: 'Now you see me' }">
+      <p style="border: 1px red solid; padding: 10px;" @mouseenter="data = 'Now you dont'" @mouseleave="data = 'Now you see me'" v-text="data"></p>
+      <p>☝️ Notice 3 states: initial, mouseenter and mouseleave</p>
+    </section>
+  </body>
+</html>
